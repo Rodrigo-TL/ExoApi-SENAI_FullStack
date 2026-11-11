@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization
 using Microsoft.AspNetCore.Mvc;
 using ExoApi.Contexts;
 using ExoApi.Models;
@@ -126,6 +127,7 @@ namespace ExoApi.Controllers
         }
 
         // DELETE: api/projetos/{id}
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
